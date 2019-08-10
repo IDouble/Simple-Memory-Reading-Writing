@@ -16,6 +16,7 @@ int main(){
 		Sleep(3000); // Sleep 3 seconds
 		exit(-1); // Exit the program if it did not find the Window
 	} else {
+		// A 32-bit unsigned integer, DWORDS are mostly used to store Hexadecimal Addresses
 		DWORD procID;
 		GetWindowThreadProcessId(hwnd, &procID);
 		HANDLE handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, procID);
