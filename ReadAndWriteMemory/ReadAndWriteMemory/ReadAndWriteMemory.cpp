@@ -13,7 +13,7 @@ int main(){
 	// Check if HWND found the Window
 	if (hwnd == NULL) {
 		cout << "Can't find Process." << endl;
-		Sleep(3000); // Sleep 3 seconds
+		Sleep(2000); // Sleep 2 seconds
 		exit(-1); // Exit the program if it did not find the Window
 	} else {
 		DWORD procID; // A 32-bit unsigned integer, DWORDS are mostly used to store Hexadecimal Addresses
@@ -22,12 +22,12 @@ int main(){
 
 		if (procID == NULL) {
 			cout << "Can't find Process." << endl;
-			Sleep(3000); // Sleep 3 seconds
+			Sleep(2000); // Sleep 2 seconds
 			exit(-1); // Exit the program if it did not find the Window
 		} else {
 			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0); // Read the Process Memory, 03007640 is the Address
 			cout << readTest << endl;
-			Sleep(10000); // Sleep 10 seconds
+			Sleep(5000); // Sleep 5 seconds
 		}
 	}
 }
