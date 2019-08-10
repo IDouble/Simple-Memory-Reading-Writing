@@ -24,7 +24,7 @@ int main(){
 			Sleep(2000); // Sleep 2 seconds
 			exit(-1); // Exit the program if it did not find the Window
 		} else {
-			// Read the Process Memory, 03007640 is the Address
+			// Read the Process Memory, 03007640 is the Address, we read the Value from and save it in readTest
 			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0);
 			cout << readTest << endl;
 			Sleep(5000); // Sleep 5 seconds
