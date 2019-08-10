@@ -10,10 +10,11 @@ int main(){
 	// HWND (Windows window) by Window Name
 	HWND hwnd = FindWindowA(NULL, "Tutorial-x86_64");
 
+	// Check if HWND found the Window
 	if (hwnd == NULL) {
 		cout << "Can't find Process." << endl;
-		Sleep(3000);
-		exit(-1);
+		Sleep(3000); // Sleep 3 seconds
+		exit(-1); // Exit the program if it did not find the Window
 	} else {
 		DWORD procID;
 		GetWindowThreadProcessId(hwnd, &procID);
@@ -21,12 +22,12 @@ int main(){
 
 		if (procID == NULL) {
 			cout << "Can't find Process." << endl;
-			Sleep(3000);
-			exit(-1);
+			Sleep(3000); // Sleep 3 seconds
+			exit(-1); // Exit the program if it did not find the Window
 		} else {
 			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0);
 			cout << readTest << endl;
-			Sleep(10000);
+			Sleep(10000); // Sleep 10 seconds
 		}
 	}
 }
