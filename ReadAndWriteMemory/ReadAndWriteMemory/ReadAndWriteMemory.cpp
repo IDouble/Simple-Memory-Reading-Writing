@@ -16,9 +16,8 @@ int main(){
 		Sleep(3000); // Sleep 3 seconds
 		exit(-1); // Exit the program if it did not find the Window
 	} else {
-		// A 32-bit unsigned integer, DWORDS are mostly used to store Hexadecimal Addresses
-		DWORD procID;
-		GetWindowThreadProcessId(hwnd, &procID);
+		DWORD procID; // A 32-bit unsigned integer, DWORDS are mostly used to store Hexadecimal Addresses
+		GetWindowThreadProcessId(hwnd, &procID); // Getting our Process ID, as an ex. like 000027AC
 		HANDLE handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, procID);
 
 		if (procID == NULL) {
@@ -26,7 +25,7 @@ int main(){
 			Sleep(3000); // Sleep 3 seconds
 			exit(-1); // Exit the program if it did not find the Window
 		} else {
-			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0);
+			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0); // Read the Process Memory
 			cout << readTest << endl;
 			Sleep(10000); // Sleep 10 seconds
 		}
