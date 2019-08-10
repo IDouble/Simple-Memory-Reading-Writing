@@ -7,8 +7,7 @@ int main(){
 
 	int readTest = 0; // We store the Value we read from the Process here
 
-	// HWND (Windows window) by Window Name
-	HWND hwnd = FindWindowA(NULL, "Tutorial-x86_64");
+	HWND hwnd = FindWindowA(NULL, "Tutorial-x86_64"); // HWND (Windows window) by Window Name
 
 	// Check if HWND found the Window
 	if (hwnd == NULL) {
@@ -25,7 +24,8 @@ int main(){
 			Sleep(2000); // Sleep 2 seconds
 			exit(-1); // Exit the program if it did not find the Window
 		} else {
-			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0); // Read the Process Memory, 03007640 is the Address
+			// Read the Process Memory, 03007640 is the Address
+			ReadProcessMemory(handle, (PBYTE*)0x03007640, &readTest, sizeof(readTest), 0);
 			cout << readTest << endl;
 			Sleep(5000); // Sleep 5 seconds
 		}
