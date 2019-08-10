@@ -1,11 +1,13 @@
 #include <iostream>
 #include <Windows.h>
+
 using namespace std;
 
 int main(){
 
 	int readTest = 0;
 
+	// HWND (Windows window) by Window Name
 	HWND hwnd = FindWindowA(NULL, "Tutorial-x86_64");
 
 	if (hwnd == NULL) {
@@ -27,5 +29,4 @@ int main(){
 			Sleep(10000);
 		}
 	}
-
 }
