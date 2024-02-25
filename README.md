@@ -81,3 +81,5 @@ int main() {
 ```
 
 ![Write Process Memory Very Simple Template with C++](Images/WriteProcessMemory.png)
+
+![Binance Ready to give crypto a try ? buy bitcoin and other cryptocurrencies on binance](Images/binance.jpg)
